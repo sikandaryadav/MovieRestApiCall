@@ -11,8 +11,8 @@ import retrofit2.http.Query;
 
 public interface ApiName {
 
-        @GET("/3/movie/popular?")
-        Call<List<PopularMovieResultsPOJO>> getPopularMovie(@Query("api_key") String apiKey);
+        @GET("/3/movie/popular")
+        Call<MoviePopularResponse> getPopularMovie(@Query("api_key") String apiKey);
 //    @GET("/posts")
 //    Call<List<PostResposnse>> getPostsData();
 //

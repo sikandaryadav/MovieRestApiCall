@@ -41,7 +41,9 @@ public class ListViewCustomAdapterRecycler extends RecyclerView.Adapter<ListView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        List<PopularMovieResultsPOJO> list = new ArrayList<>();
+        PopularMovieResultsPOJO popularMovie = list.get(position);
+//        holder.movieBinding.tvMovieTitle.setText(popularMovie.getOriginalTitle());
+
         String imagePoster = Utility.IMAGE_BASE_URL + list.get(position).getPosterPath();
         String imageBackground = Utility.IMAGE_BASE_URL + list.get(position).getBackDropPath();
 
@@ -65,9 +67,7 @@ public class ListViewCustomAdapterRecycler extends RecyclerView.Adapter<ListView
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
         CustomListviewItemMovieBinding movieBinding;
-
         public MyViewHolder(CustomListviewItemMovieBinding itemView) {
             super(itemView.getRoot());
             movieBinding = itemView;
